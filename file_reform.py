@@ -86,8 +86,8 @@ def make_diploma(template, have_project, index, *args):
         with zipfile.ZipFile('diplomas.zip', mode='w'):
             pass
     with zipfile.ZipFile('diplomas.zip', mode='a') as zip_file:
-        zip_file.write(f"train_out_{index}.pdf")
-    os.remove(f"train_out_{index}.pdf")
+        zip_file.write(f"diploma_{index}.pdf")
+    os.remove(f"diploma_{index}.pdf")
 
 
 # use information from csv file to making pdf files
