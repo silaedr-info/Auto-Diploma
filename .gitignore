@@ -1,3 +1,4 @@
 data.csv
 diplomas.zip
 ./templates_pdf
+./__pycache__
