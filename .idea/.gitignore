@@ -7,6 +7,6 @@
 /dataSources/
 /dataSources.local.xml
 # data files
-/../diplomas.zip
-/../data.csv
-/../templates_pdf
+/diplomas.zip
+/data.csv
+/templates_pdf
