@@ -41,6 +41,7 @@ def add_template():
 def delete_zip():
     if os.path.exists('diplomas.zip'):
         os.remove('diplomas.zip')
+    return ''
 
 
 app.run()
