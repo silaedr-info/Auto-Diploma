@@ -5,8 +5,9 @@
     <title>Add_new_template</title>
 </head>
     <body>
-        <form action="/add_new_template">
-            <input type="file">
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="new_template">
+            <input type="text" name="name_of_template">
             <button type="submit">Submit</button>
         </form>
     </body>

@@ -33,7 +33,9 @@ def send():
 @app.route('/add_new_template', methods=['GET', 'POST'])
 def add_template():
     if request.method == 'POST':
-        request.files.get('new_template').save(f'templates_pdf/{request.args.get("name_of_template")}')
+        if not os.path.exists('templates_pdf'):
+            os.mkdir('templates_pdf')
+        request.files.get('new_template').save(f'templates_pdf/{request.form.get("name_of_template")}.pdf')
     return render_template('add_template.html')
 
 
