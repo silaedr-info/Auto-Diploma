@@ -1,6 +1,6 @@
 import file_reform
 import os
-from flask import Flask, request, render_template, send_file, redirect
+from flask import Flask, request, render_template, send_file, redirect, jsonify
 
 app = Flask(__name__)
 
@@ -45,6 +45,11 @@ def delete_zip():
     if os.path.exists('diplomas.zip'):
         os.remove('diplomas.zip')
     return ''
+
+
+@app.route('/send_png')
+def send_png():
+    return jsonify('diploma_premier.png')
 
 
 app.run()
