@@ -5,6 +5,7 @@ from pypdf import PdfWriter, PdfReader
 from reportlab.pdfgen import canvas
 import textwrap
 import zipfile
+import fitz
 import csv
 import io
 import os
@@ -87,6 +88,11 @@ def make_diploma(template, have_project, index, *args):
             pass
     with zipfile.ZipFile('diplomas.zip', mode='a') as zip_file:
         zip_file.write(f"diploma_{index}.pdf")
+    out = fitz.open(f"diploma_{index}.pdf")
+    page = out.load_page(0)
+    out_img = page.get_pixmap()
+    out_img.save(f"diploma_premier.png")
+    out.close()
     os.remove(f"diploma_{index}.pdf")
 
 
